@@ -1,0 +1,18 @@
+<h1>Listing topics</h1>
+
+<%= link_to 'New topic', new_topic_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @topics.each do |topic| %>
+    <tr>
+      <td><%= topic.title %></td>
+      <td><%= topic.focus_area %></td>
+      <td><%= topic.description %></td>
+
+    </tr>
+  <% end %>
+</table>

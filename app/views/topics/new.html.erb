@@ -1,0 +1,36 @@
+<h1>New Article</h1>
+
+<%= form_for :topic, url: topics_path , html:{class:"form-horizontal"} do |f| %>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.label :title , class:"col-sm-2 control-label" %><br>
+      <%= f.text_field :title , class:"form-control col-sm-8" %>
+      <!-- Placeholder? -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.label :focus_area , class:"col-sm-2 control-label" %><br>
+      <%= f.text_field :focus_area , class:"form-control" %>
+      <!-- Placeholder? -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.label :description , class:"col-sm-2 control-label" %><br>
+      <%= f.text_area :description , class:"form-control" %>
+      <!-- Placeholder? -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class:"btn btn-default" %>
+    </div>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back to topics', topics_path %>

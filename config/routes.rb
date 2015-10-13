@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-  resources :topics
+  resources :topics,  except: [:destroy]
+  resources :interests, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root "devise/sessions#new" #should be index page
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  root "topics#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

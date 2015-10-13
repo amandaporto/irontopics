@@ -24,6 +24,8 @@ gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'devise-bootstrap-views'
 
+# Formatting
+gem 'redcarpet'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

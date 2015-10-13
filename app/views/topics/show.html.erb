@@ -1,17 +1,39 @@
 
-<%= link_to 'Back to topics', topics_path %>
-
 <p>
   <strong>Title:</strong>
   <%= @topic.title %>
 </p>
 
 <p>
-  <strong>Focus Area:</strong>
+  <strong>Focus area:</strong>
   <%= @topic.focus_area %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @topic.description %>
+  <div class="markdown">
+  <%= @markdown.render(@topic.description).html_safe %>
+  </div>
 </p>
+
+<ul>
+  <% @topic.interests.each do |interest| %>
+    <li><%= interest.level %> by <%= interest.user.name %>. Comment: <%= @markdown.render(interest.comment).html_safe %></li>
+  <% end %>
+</ul>
+
+<%= form_for(@topic.interests.new) do |f| %>
+  <%= f.hidden_field :topic_id, value: @topic.id %>
+  <div class="field">
+  <%= f.label :level %>
+  <%= f.text_field :level %>
+  </div>
+  <div class="field">
+  <%= f.label :comment %>
+  <%= f.text_area  :comment %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

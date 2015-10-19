@@ -15,3 +15,70 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+// Site-wide
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+// Forms
+.border-form-div {
+  max-width: 400px;
+  padding: 20px 30px 30px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 1px 4px 3px rgba(0,0,0,.08);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 15px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+// Navbar
+.navbar,
+.navbar-default {
+  background-color: #252839;
+  color: #fff;
+  padding: 5px 40px;
+}
+.navbar {
+  border-radius: 0;
+}
+.navbar-default{
+   border: none;
+ }
+.brand {
+  color: #fff;
+  font-size: 22px;
+}
+.brand_italic {
+  font-style: italic;
+  color: #f2b632;
+}
+.initial_icon {
+  padding: 5px 8px 0 0;
+}
+.username {
+  padding: 15px 15px 0 0;
+  color: #f2b632;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  font-weight: bold;
+  font-style: italic;
+}

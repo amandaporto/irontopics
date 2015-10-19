@@ -8,8 +8,21 @@
 </head>
 <body>
     <%= render 'shared/navbar' %>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>All Topics</a></li>
+        <li role="presentation" class="nav_tab"><a href="#"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add New Topic</a></li>
+      </ul>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container-fluid">
+        <div class="col-xs-12 col-md-6">
+        <%= yield %>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <%= render 'shared/sidebar' %>
+      </div>
+
+    </div>
 </body>
 </html>

@@ -20,8 +20,12 @@
 // Site-wide
 body {
   font-family: 'Open Sans', sans-serif;
+  color: #252839;
 }
-
+ul {
+  list-style: none;
+  margin: 0;
+}
 
 // Forms
 .border-form-div {
@@ -52,6 +56,7 @@ body {
   background-color: #252839;
   color: #fff;
   padding: 5px 40px;
+  margin-bottom: 0;
 }
 .navbar {
   border-radius: 0;
@@ -81,4 +86,53 @@ body {
   color: #fff;
   font-weight: bold;
   font-style: italic;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover {
+  border-top: 5px solid #f2b632;
+  border-radius: 0px;
+}
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover {
+  background-color: #fff;
+  border: none;
+  color: #252839;
+}
+.glyphicon {
+  font-size: 12px;
+  padding-right: 5px;
+}
+.nav_tab {
+  padding-top: 5px;
+}
+.nav_tab > a:hover {
+  font-style: italic;
+  font-weight: bold;
+}
+
+// Sidebar
+.sidebar_title {
+  text-transform: uppercase;
+  border-bottom: 1px solid #b5b5b7;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #b5b5b7;
+}
+.stats {
+  background-color: #FCF0D6;
+  color: #677077;
+  padding: 5px 0;
+  margin-bottom: 40px;
+}
+.stat_list {
+  padding-left: 20px;
+}
+.stat_list > li{
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 0;
+}
+.stat_number {
+  font-size: 22px;
+  padding-right: 5px;
 }

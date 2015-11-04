@@ -1,30 +1,31 @@
-<h1>Listing Topics</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Focus area</th>
-      <th>Description</th>
-      <th>Interests</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<% @topics.each do |topic| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <!-- LINK TO TOPIC  -->
+      <%= image_tag("gray_profile.png", width:"80", class:"initial_icon float_left") %>
 
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.title %></td>
-        <td><%= topic.focus_area %></td>
-        <td><%= topic.description %></td>
-        <td><%= topic.interests_count %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <%= link_to topic , class:"topic_panel" do %>
+        <ul>
+          <li class="topic_title">
+            <%= topic.title %>
+            <span class="glyphicon glyphicon-comment float_right" aria-hidden="true">
 
-<br>
+              <% if topic.interests_count.nil? %>
+                <span class="number_interests">0</span>
+              <% else %>
+                <span class="number_interests"><%= topic.interests_count %><span>
+              <% end %>
 
-<%= link_to 'New Topic', new_topic_path %>
+            </span>
+          </li>
+
+          <li class="topic_info">
+            <span class="focus"><%= topic.focus_area %></span> by <%= topic.user_id %> on <%= topic.created_at %>
+          </li>
+        </ul>
+      <% end %>
+
+    </div>
+  </div>
+<% end %>

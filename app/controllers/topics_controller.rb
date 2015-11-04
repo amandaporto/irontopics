@@ -3,11 +3,14 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update]
 
   def index
-    @topics = Topic.all.includes(:interests).sort_by {|topic| topic.interests.sum(:level)}
+    @topics = Topic.all
+    @top_topics = Topic.order("interests_count DESC").limit(3)
     end
 
   def new
     @topic = Topic.new
+    @top_topics = Topic.order("interests_count DESC").limit(3)
+
   end
 
   def create
@@ -27,6 +30,8 @@ class TopicsController < ApplicationController
 
   def show
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, filter_html: true, no_links: true)
+    @top_topics = Topic.order("interests_count DESC").limit(3)
+
   end
 
   private

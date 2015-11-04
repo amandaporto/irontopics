@@ -1,6 +1,5 @@
 
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
         <p class="brand"> IRON<span class="brand_italic">topics</span> </p>
@@ -16,7 +15,7 @@
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-          <li><%= image_tag("profile_icon.png", width:"50", class:"initial_icon") %></li>
+          <li><%= image_tag("yellow_profile.png", width:"50", class:"initial_icon") %></li>
           <li class="username"><%= current_user.name %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <% else %>
@@ -26,6 +25,18 @@
       </ul>
    </div> <!-- Navbar-collapse -->
 
-   </div> <!--Container-fluid -->
-
 </nav>
+
+<% if user_signed_in? %>
+  <div class="tabs">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><%= link_to 'All Topics', topics_path %>
+        <!-- <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> -->
+      </li>
+      <li role="presentation" class="nav_tab"><%= link_to 'Add New Topic', new_topic_path %>
+        <!-- <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> -->
+      </li>
+    </ul>
+  </div>
+<% else %>
+<% end %>
